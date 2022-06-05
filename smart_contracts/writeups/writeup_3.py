@@ -1,9 +1,9 @@
-from sha3 import keccak_256
+# from sha3 import keccak_256
 from web3 import Web3, HTTPProvider
 
 client = Web3(HTTPProvider("http://awesome.chall.seetf.sg:40002/"))
 
-target = "0xeb22BF8C59eA3f98081F9a8D188f2737Ec5c153A"
+target = "0xB1c4c05BdA2698bA5A5b20ccfD4b6D974882fbcF"
 # target = '0xda925A0e6AcE9fb2020fcC695aF192786dd0330A'
 
 address_bytes = client.eth.get_storage_at(target, 0)
@@ -23,7 +23,8 @@ print(f"Time stamp address: {time_stamp}.")
 # time_stamp = hex(int.from_bytes(time_stamp_slot, 'big'))
 # print(f"Owner address: {time_stamp}.")
 
-map_1_address = client.keccak(bytes.fromhex("0"*63 + "1" + "0"*63 + "0")).hex()
+map_1_address = client.keccak(bytes.fromhex("0"*63 + "0" + "0"*63 + "1")).hex()
+# map_1_address = client.keccak(hexstr="0x" + "0"*127 + "1").hex()
 # map_1_address = keccak_256(bytes.fromhex("0"*63 + "0" + "0"*63 + "1")).hexdigest()
 print(map_1_address)
 map_1_slot = client.eth.get_storage_at(target, map_1_address)
