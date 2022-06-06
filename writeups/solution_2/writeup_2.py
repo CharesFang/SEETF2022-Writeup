@@ -3,7 +3,7 @@ from web3 import Web3, HTTPProvider
 
 client = Web3(HTTPProvider("http://awesome.chall.seetf.sg:40002/"))
 
-target = "0x8E13df48763E76168e70ad3c49F54b3ab3636e5D"
+target = "TARGET ADDRESS"
 
 with open("challange2_abi.json", "r") as file:
     target_abi = json.load(file)

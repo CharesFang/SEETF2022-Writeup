@@ -7,7 +7,7 @@ interface DuperSuperSafeSafe{
 }
 
 contract Writeup {
-    address private target_address = 0xeb22BF8C59eA3f98081F9a8D188f2737Ec5c153A;
+    address private target_address = "TARGET ADDRESS";
     uint private timestamp = 0x629b2490;
     address payable owner;
     DuperSuperSafeSafe private target = DuperSuperSafeSafe(payable(target_address));

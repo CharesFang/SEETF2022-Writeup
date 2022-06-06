@@ -3,7 +3,7 @@ from web3 import Web3, HTTPProvider
 
 client = Web3(HTTPProvider("http://awesome.chall.seetf.sg:40002/"))
 
-target = "0xeb22BF8C59eA3f98081F9a8D188f2737Ec5c153A"
+target = "TARGET ADDRESS"
 
 address_bytes = client.eth.get_storage_at(target, 0)
 owner_address = hex(int.from_bytes(address_bytes, 'big'))

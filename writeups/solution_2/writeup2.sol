@@ -6,7 +6,7 @@ interface Target{
 }
 
 contract Writeup{
-    Target public target = Target(0x8E13df48763E76168e70ad3c49F54b3ab3636e5D);
+    Target public target = Target("TARGET ADDRESS");
 
     constructor() {
         target.increaseBalance(374);

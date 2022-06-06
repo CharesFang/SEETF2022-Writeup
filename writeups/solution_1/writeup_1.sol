@@ -6,11 +6,10 @@ interface Target {
 }
 
 contract Writeup {
-    Target private target =  Target(0x5cf50385021BDFf8Afa19dFF6aeba231346d8DF1);
+    Target private target =  Target("TARGET ADDRESS");
 
     function attack() external {
         string memory my_msg = "Welcome to SEETF";
         target.setWelcomeMessage(my_msg);
     }
 }
-

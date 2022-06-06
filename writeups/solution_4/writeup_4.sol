@@ -15,7 +15,7 @@ interface RollsRoyce {
 
 contract Writeup{
     address payable owner;
-    address private target_address = payable(0x7991CcAa4179406623E4B5758F6a1aB37ba68984);
+    address private target_address = payable("TARGET ADDRESS");
     RollsRoyce private target = RollsRoyce(payable(target_address));
     event Num(uint num);
 
