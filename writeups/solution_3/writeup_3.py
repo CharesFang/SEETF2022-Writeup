@@ -16,11 +16,6 @@ print(f"Map basis address: {map_basis}.")
 
 time_stamp_slot = client.eth.get_storage_at(target, 2)
 time_stamp = hex(int.from_bytes(time_stamp_slot, 'big'))
-# print(f"Time stamp address: {time_stamp}.")
-
-# time_stamp_slot = client.eth.get_storage_at(target, keccak_256(client.toBytes(1)+client.toBytes(0)))
-# time_stamp = hex(int.from_bytes(time_stamp_slot, 'big'))
-# print(f"Owner address: {time_stamp}.")
 
 secret_passphrase_0_address = client.keccak(bytes.fromhex("0"*64 + "0"*63 + "1")).hex()
 map_0_slot = client.eth.get_storage_at(target, secret_passphrase_0_address)
